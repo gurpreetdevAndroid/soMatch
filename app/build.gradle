@@ -1,0 +1,119 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'org.jetbrains.kotlin.android.extensions'
+
+def configuration = rootProject.ext.configuration
+def libraries = rootProject.ext.dependencies
+
+
+android {
+    compileSdkVersion configuration.compileSdkVersion
+    defaultConfig {
+        applicationId configuration.packageName
+        minSdkVersion configuration.minSdkVersion
+        targetSdkVersion configuration.targetSdkVersion
+        versionCode configuration.versionCode
+        versionName configuration.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        renderscriptTargetApi 21
+        renderscriptSupportModeEnabled true
+
+        ndk {
+            abiFilters "armeabi-v7a", "x86", "armeabi", "mips"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation "androidx.test:runner:1.1.2-alpha01"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.1.2-alpha01"
+
+    // Kotlin and support libraries
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.appcompat:appcompat:${libraries.appCompatVersion}"
+    implementation "androidx.constraintlayout:constraintlayout:${libraries.constraintLayout}"
+
+    // Architecture Components
+    implementation "androidx.lifecycle:lifecycle-extensions:${libraries.architectureComponentsVersion}"
+    implementation "androidx.lifecycle:lifecycle-common-java8:${libraries.architectureComponentsVersion}"
+
+    // WorkManager
+    implementation "android.arch.work:work-runtime-ktx:${libraries.workManager}"
+
+    // Core android KTX
+    implementation "androidx.core:core-ktx:${libraries.androidCoreKTXVersion}"
+
+    // Android Support Design
+    implementation("com.google.android.material:material:${libraries.androidSupportDesign}") {
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
+
+    // RecyclerView
+    implementation("androidx.recyclerview:recyclerview:${libraries.androidSupportDesign}") {
+        exclude module: 'support-v4'
+    }
+
+    // CardView
+    implementation("androidx.cardview:cardview:${libraries.androidSupportDesign}") {
+        exclude module: 'support-v4'
+    }
+
+    // Fresco for Image Loading
+    implementation("com.facebook.fresco:fresco:${libraries.fresco}") {
+        exclude module: 'support-v4'
+    }
+    implementation("com.facebook.fresco:animated-gif:${libraries.fresco}") {
+        exclude module: 'support-v4'
+    }
+
+    // Retrofit for making Network Connections
+    implementation "com.squareup.retrofit2:retrofit:${libraries.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${libraries.retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${libraries.retrofit}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${libraries.okHttpLoginInterceptor}"
+
+    // RxJava and RxAndroid for reactive programming
+    implementation "io.reactivex.rxjava2:rxjava:${libraries.rxJava}"
+    implementation "io.reactivex.rxjava2:rxandroid:${libraries.rxAndroid}"
+
+    // Facebook Login SDK
+    implementation "com.facebook.android:facebook-login:${libraries.facebookLoginSDK}"
+
+    // GooglePlus Login SDK
+    implementation("com.google.android.gms:play-services-auth:${libraries.googlePlusLoginSDK}") {
+        exclude(group: 'com.android.support')
+    }
+
+    // Firebase
+    implementation "com.google.firebase:firebase-analytics:${libraries.firebaseAnalytics}"
+    implementation "com.google.firebase:firebase-messaging:${libraries.firebaseMessaging}"
+/*
+    apply plugin: 'com.google.gms.google-services'
+*/
+}

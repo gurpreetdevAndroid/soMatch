@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#0B69DA</color>
+    <color name="colorAccent">#0B69DA</color>
+    <color name="colorEditFocus">#FF5B6F</color>
+
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorPrimaryText">#242D41</color>
+    <color name="colorSecondaryText">#474663</color>
+    <color name="colorDisabledText">#8C8C8C</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="colorDivider">#717171</color>
+    <color name="colorGrayBg">#979797</color>
+
+    <color name="colorRecylerViewDivider">#EBEBEB</color>
+
+    <color name="colorInputEditTextHint">#727784</color>
+    <color name="colorInputEditTextValue">#2C355B</color>
+    <color name="colorInputEditTextStroke">#1A000000</color>
+    <color name="colorSkyBlue">#3DA5E5</color>
+
+</resources>

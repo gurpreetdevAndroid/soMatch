@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">So Match</string>
+
+    <!-- ForgotPassword DialogFragment -->
+    <string name="title_forgot_password">Forgot Password</string>
+    <string name="enter_email_to_recover_pwd">Enter your email to recover your password.
+        You\'ll get a recovery link on your registered email.</string>
+    <string name="submit">Submit</string>
+
+    <!-- SignUp Fragment -->
+    <string name="hint_email">Email</string>
+
+    <!-- CountryCode DialogFragment -->
+    <string name="select_country_code">Select Country Code</string>
+
+    <!-- ChangePassword DialogFragment -->
+    <string name="change_password">Change Password</string>
+    <string name="change">Change</string>
+    <string name="hint_old_password">Old Password</string>
+    <string name="hint_new_password">New Password</string>
+    <string name="empty_old_password">Please enter your old password.</string>
+    <string name="empty_new_password">Please enter your new password.</string>
+    <string name="invalid_new_password">Your new password should contain 6–15 characters.</string>
+    <string name="password_not_matched">Your password didn\'t match.</string>
+
+    <!-- Miscellaneous Strings -->
+    <string name="dialog">dialog</string>
+    <string name="ok">OK</string>
+    <string name="action_okay">Okay</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_internet">Please check your internet connection.</string>
+    <string name="retrofit_failure">There might be some problem please try again later.</string>
+    <string name="hint_search">Search…</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="choose_from_gallery">Choose From Gallery</string>
+    <string name="session_expired">Your session is expired, please login again to continue.</string>
+    <string name="storage_permission_needed">You need to grant read/write external
+        storage permission in order to access media.</string>
+    <string name="enable_storage_permission">You should enable your storage permission
+        in the settings for better experience.</string>
+    <string name="location_permission_needed">You need to grant location  permission in order to use the app features.</string>
+    <string name="enable_location_permission">You should enable your location permission
+        in the settings for better experience.</string>
+    <string name="enable_camera_permission">You should enable your camera permission
+        in the settings for better experience.</string>
+    <string name="reading_contacts_permission_required">You should enable read contacts
+        permission to get recommendations from your phonebook contacts.</string>
+    <string name="enable_read_contacts_permission">You should enable read contacts
+        permission in the app settings.</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+    <string name="processing_image">Processing Image…</string>
+    <string name="share_via">Share via</string>
+    <string name="lets_start">Lets Get started</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_in">Sign In</string>
+    <string name="terms_conditions"><![CDATA[By Contuning you agree with our Terms & Policy.]]></string>
+
+
+</resources>
